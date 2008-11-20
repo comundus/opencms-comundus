@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- see http://maven.apache.org/maven-1.x/plugins/changes/ -->
+<!-- type can be: add, remove, fix, update -->
+<document>
+    <properties>
+        <title>OpenCms comundus Changes</title>
+        <author email="d.pleiss@comundus.com">Detlef Pleiß</author>
+    </properties>
+  
+    <body>
+        <release version="7.0.5" date="2008-09-26">
+            <action dev="dp" type="update">initial Maven Style version of OpenCms 7.0.5</action>
+        </release>
+        <release version="7.0.1d" date="2007-11-13">
+            <action dev="dp" type="fix">fixed bugs around custom Link Relation types</action>
+        </release>
+        <release version="7.0.1c" date="2007-11-06">
+            <action dev="dp" type="add">added handling for Organizational Units</action>
+        </release>
+        <release version="7.0.1b" date="2007-10-22">
+            <action dev="dp" type="fix" date="2007-10-22">fixed repeated update bug in synchronisation</action>
+        </release>
+        <release version="7.0.1" date="2007-07-26">
+            <action dev="dp" type="add" date="2007-07-26">org.opencms.main.version.properties</action>
+            <action dev="dp" type="remove" date="2007-07-23">org.opencms.db.CmsDriverManager.createGroup() : removed readOrganizationalUnit(dbc, CmsOrganizationalUnit.getParentFqn(name));</action>
+            <action dev="dp" type="add" date="2007-07-23">org.opencms.main.CmOpenCmsShell</action>
+            <action dev="dp" type="add" date="2007-07-23">com.comundus.opencms : classes called by Maven VFS plugin</action>
+            <action dev="dp" type="update" date="2007-07-23">org.opencms.synchronize.CmsSynchronize replaced with comundus version</action>
+        </release>
+    </body>
+</document>
