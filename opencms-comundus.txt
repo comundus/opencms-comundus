@@ -1,0 +1,28 @@
+package com.comundus.opencms
+		Worker-Klassen für die entsprechenden Goals im maven-vfs-plugin
+	VfsModule
+	VfsOrgunits
+	VfsPublish
+	VfsSetup
+	VfsSync
+	VfsUserExport
+	VfsUserImport
+	(XmlHandling: super class for VfsOrgunits, VfsSync, VfsUserExport, VfsUserImport)
+
+		benutzt Code von 
+		org.opencms.module.CmsModuleImportExportHandler, org.opencms.db.generic.CmsUserDriver, org.opencms.synchronize.CmsSynchronize,
+		org.opencms.importexport.CmsImport,	org.opencms.importexport.CmsExport,	org.opencms.importexport.CmsImportVersion4,	
+		org.opencms.importexport.CmsImportVersion5, org.opencms.importexport.CmsImportVersion6, org.opencms.importexport.A_CmsImport,
+		org.opencms.main.CmsShell, org.opencms.main.CmsShellCommands, org.opencms.synchronize.CmsSynchronize
+		VfsSetup basiert auf WEB-INF/setupdata/cmssetup.txt from the original distribution
+
+		Änderungen an diesen Dateien müssen also ggf. nachgezogen werden
+
+Änderungen in opencms 7.0.3 Klassen:
+org.opencms.db.CmsDriverManager.createGroup() : Prüfungen der parent group entfernt; Initialisierung mit Benutzern bei Gruppen, die einer Rolle entsprechen entfernt
+org.opencms.main.CmOpenCmsShell : neue Klasse, die die vom VFS-Plugin benutzte OpenCms Instanz hochfährt und zur Verfügung stellt. Muss wg. Zugriff auf protected Methoden, z.B. OpenCmsCore.upgradeRunlevel in diesem Package liefen.
+org.opencms.synchronize.CmsSynchronize : verwendet das Datenformat von com.comundus.opencms.VfsSync für die eingebaute Synchronisations-Funktion
+
+org.opencms.relations.CmsRelationType : Defaultwert für "defined in content" auf true, sonst können keine solchen eigenen Relationen definiert werden; Bugfixes in valueOf() und valueOfInternal()
+org.opencms.util.CmsXsltUtil : Bugfix in getTableHtml()
+org.opencms.workplace.galleries.A_CmsGallery : minor logging change
